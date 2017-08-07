@@ -1,0 +1,30 @@
+doctype html
+html
+    include ./templates/head.pug
+    
+    body
+        .grid
+            .grid-navbar
+                include ./templates/navbar.pug
+                
+            .subgrid.sign-log
+                .leftpanel.local
+                    h3 Login
+                    br
+                    form.signup-form(action='/login' method='POST')
+                        if message.length > 0
+                            .alert.alert-danger= message
+                        label(for='username') Username:
+                        input#username.form-control(type='text' name='username' placeholder='Your Username')
+                        br
+                        label(for='password') Password:
+                        input#password.form-control(type='password' name='password' placeholder='Your Password')
+                        button#login-btn.btn.btn-primary.btn-lg(type='submit') Login
+                        
+                .rightpanel.github
+                    a#github-btn.btn.btn-info.btn-lg(href='/auth/github')
+                        img(src='/public/img/github_32px.png', alt='github logo')
+                        |&nbsp; Github Login
+                        
+        include ./templates/scripts.pug
+                

@@ -1,0 +1,231 @@
+/*grid*/
+.grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "navbar" "main";
+}
+
+.grid-navbar {
+    grid-area: navbar;
+}
+
+/*subgrid*/
+.subgrid {
+    display: grid;
+    grid-template-areas: "leftpanel" "rightpanel";
+}
+
+.leftpanel {
+    grid-area: leftpanel;
+}
+
+.rightpanel {
+    grid-area: rightpanel;
+}
+
+/*navbar*/
+.grid-navbar {
+    height: 64px;
+    z-index: 1;
+}
+
+.nav-text {
+    font-size: 16px;
+}
+
+/*signup/login*/
+.sign-log {
+    grid-area: main;
+}
+
+.local,
+.github {
+    margin: 0 2em 0 2em;
+}
+
+#signup-btn,
+#login-btn {
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+#signup-btn,
+#login-btn,
+#github-btn {
+    width: 100%;
+    margin-top: 1em;
+}
+
+/*index*/
+.grid-index {
+    grid-area: main;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.btn-reg {
+    height: 44px;
+    margin-right: 2em;
+}
+
+.btn-reg-text {
+    line-height: 32px;
+    vertical-align: middle;
+}
+
+
+p {
+    padding: 0 1em 0 1em;
+    text-align: left;
+}
+
+
+/*home/list*/
+.grid-home,
+.grid-list {
+    grid-area: main;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#pollContainer>div:not(:last-child) {
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.listitem {
+    font-size: 18px;
+}
+
+.listitem-delete {
+    float: right;
+    cursor: pointer;
+}
+
+.list-group-item {
+    font-size: 16px;
+    text-align: center;
+}
+
+#close,
+#submit {
+    float: right;
+}
+
+#submit {
+    margin-right: 1em;
+}
+
+/*poll*/
+.panel {
+    grid-area: main;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.poll-vote {
+    margin-bottom: 1em;
+}
+
+.vote-list {
+    text-indent: 10px;
+    border: 1px solid gray;
+}
+
+.canvas-container {
+    width: 50vh;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+a#twitter-btn:hover {
+    color: #FFF;
+    background-color: #1DA1F2;
+}
+
+.twitter-text {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#select-btn {
+    width: 100%;
+}
+
+#newBtn,
+.inputfield,
+.label-option {
+    margin-top: 1em;
+}
+
+.vote-buttons {
+    width: 100%;
+    margin-top: 1em;
+}
+
+#twitter-btn {
+    display: block;
+    text-align: center;
+    color: #FFF;
+    background-color: #1DA1F2;
+}
+
+/*misc*/
+.invalid {
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+    .subgrid {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "leftpanel rightpanel";
+
+    }
+    
+    /* login & signup*/
+    .local {
+        width: 80%;
+    }
+
+    .github {
+        margin: auto;
+    }
+
+    /*home*/
+    #newBtn {
+        width: 20%;
+    }
+
+    /*index*/
+    .jumbotron {
+        border-radius: 3px;
+        border: 1px solid #374046;
+    }
+
+    p {
+        padding: 0 3em 0 3em;
+    }
+
+    /*list*/
+    .grid-list {
+        width: 94%;
+    }
+
+    /*poll*/
+    .panel-body {
+        margin-top: 2em;
+    }
+
+    .poll-vote {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .canvas-container {
+        width: 40vh;
+        height: 40vh;
+    }
+}

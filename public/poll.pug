@@ -1,0 +1,40 @@
+doctype html
+html
+    include ./templates/head.pug
+    
+    body
+        .grid
+            .grid-navbar
+                include ./templates/navbar.pug
+                
+            .panel.panel-default
+                .poll-title.panel-heading
+                    h4.title
+                    
+                .subgrid.panel-body
+                    .leftpanel.poll-vote
+                        .vote-select
+                            h5 Voting for...
+                            - var url = '/polls/' + pollid + '/update'
+                            form(action=url method='POST')
+                                select.vote-list.btn-lg.vote-buttons(name='select')
+                                button.btn.btn-primary.btn-lg.vote-buttons(type='submit') Vote
+                                    
+                        if auth
+                            .vote-newoption
+                                button#newoption-btn.btn.btn-primary.btn-lg.vote-buttons New Option
+                                form#newoption-form(action=url method='POST')
+                                
+                            a#twitter-btn.btn.btn-lg.vote-buttons(href="https://twitter.com/share" target='_blank' data-show-count="false")
+                                img(src='/public/img/twitter_logo.png', alt='twitter logo' height="32" width="32")
+                                .twitter-text Share on Twitter
+                            
+                    .rightpanel.poll-chart
+                        .canvas-container
+                            canvas
+        
+        include ./templates/scripts.pug
+        script(type='text/javascript', src="../common/ajax-functions.js")
+        script(type='text/javascript', src="../js/Chart.js")
+        script(type='text/javascript', src="../controllers/pollController.client.js")
+        script(async src="//platform.twitter.com/widgets.js" charset='utf8')

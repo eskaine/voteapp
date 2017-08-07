@@ -1,0 +1,16 @@
+doctype html
+html
+    include ./templates/head.pug
+    
+    body
+        .grid
+            .grid-navbar
+                include ./templates/navbar.pug
+                
+            .grid-list
+                h3 Poll List
+                .list-group
+                
+        include ./templates/scripts.pug
+        script(type='text/javascript', src='common/ajax-functions.js')
+        script(type='text/javascript', src='controllers/listController.client.js')

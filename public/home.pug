@@ -1,0 +1,49 @@
+doctype html
+html
+    include ./templates/head.pug
+    
+    body
+        #pollModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true')
+                        h4#pollModalLabel.modal-title New Poll
+                        
+                    .modal-body
+                        form(action='/submit' method='POST')
+                            label(for='pollTitle') 
+                                | Poll Title
+                            input#pollTitle.form-control(type='text' name='title' placeholder='New Poll')
+                            #options
+                                div
+                                    label.label-option(for='option1')
+                                        | Option 1
+                                    input#option1.form-control(type='text' name='option1')
+                                div
+                                    label.label-option(for='option2') 
+                                        | Option 2
+                                    input#option2.form-control(type='text' name='option2')
+                            br
+                            br
+                            button#add.btn.btn-success(type='button') Add Option
+                            button#close.btn.btn-default(type='button' data-dismiss='modal') Close
+                            button#submit.btn.btn-primary(type='submit') Add Poll
+    
+        .grid
+            .grid-navbar
+                include ./templates/navbar.pug
+                
+            .grid-home
+                h4 Welcome, #{name}
+                button#newBtn.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#pollModal') New Poll
+                br
+                br
+                h4#polllist-header My Polls
+                #pollContainer
+                    
+        include ./templates/scripts.pug
+        script(type='text/javascript', src='common/ajax-functions.js')
+        script(type='text/javascript', src='controllers/eventsController.client.js')
+        script(type='text/javascript', src='controllers/userlistController.client.js')

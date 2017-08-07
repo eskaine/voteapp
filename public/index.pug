@@ -1,0 +1,24 @@
+doctype html
+html
+    include ./templates/head.pug
+    
+    body
+        .grid
+            .grid-navbar
+                include ./templates/navbar.pug
+                
+            .grid-index
+                .jumbotron
+                    h3.title Welcome to VoteGen
+                    h5 Generate your own poll now!
+                    a.btn.btn-primary.btn-reg(href='/signup') 
+                        div.btn-reg-text Sign Up
+                    a.btn.btn-info(href='/auth/github')
+                        img(src='/public/img/github_32px.png', alt='github logo')
+                        |&nbsp; Github Login
+                        
+                .jumbotron
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim leo vitae feugiat posuere. Praesent sit amet tortor eros. Aenean ac ex at felis euismod convallis sit amet in ligula. Vivamus ut elementum erat. Donec tristique eros at gravida dapibus. Aenean quis magna at mauris facilisis posuere ac non mauris. Aliquam egestas odio sit amet rhoncus bibendum.
+                    p Aliquam magna felis, tincidunt nec viverra at, pretium non sem. Donec faucibus ante vitae felis porttitor auctor. Nam eu lobortis odio, accumsan laoreet nisl. Curabitur mollis, ex eget fringilla pharetra, metus leo porta mauris, pretium feugiat magna tellus vel justo. Etiam sed lobortis augue. Duis non maximus urna. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Pellentesque venenatis nibh sed augue sollicitudin, nec dictum nulla placerat. Cras in lacinia turpis.
+                    
+        include ./templates/scripts.pug
